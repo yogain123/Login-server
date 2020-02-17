@@ -11,6 +11,18 @@ router.get("/", (req, res, next) => {
 router.post("/register", async function(req, res, next) {
   try {
     let reqData = req.body;
+    if (!reqData.password) {
+      throw {
+        status: false,
+        info: "password is required"
+      };
+    }
+    if (!reqData.email) {
+      throw {
+        status: false,
+        info: "email is required"
+      };
+    }
     let userDetails = await getUser(reqData.email);
     if (userDetails) {
       throw {
