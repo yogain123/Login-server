@@ -9,7 +9,7 @@ const port = process.env.PORT || 3009;
 
 connectDB();
 
-var routing = require("./routing");
+var routing = require("./routes");
 
 app.use(bodyParser.json());
 

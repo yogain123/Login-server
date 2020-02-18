@@ -1,8 +1,8 @@
 const express = require("express");
 const router = express.Router();
 const bcrypt = require("bcryptjs");
-const { createUser, getUser, deleteUser } = require("./user");
-const { getToken, verifyToken } = require("./config");
+const { createUser, getUser, deleteUser } = require("../controller/user");
+const { getToken, verifyToken } = require("../config");
 
 router.get("/", (req, res, next) => {
   res.send("Index !!");
